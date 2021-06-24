@@ -1,12 +1,27 @@
 import * as React from 'react'
-import {Link} from 'gatsby'
-import {container,
-heading, navLinks, navLinkItem, navLinkText} from '../components/layout.module.css'
-import { StaticImage } from 'gatsby-plugin-image'
+import { Link, useStaticQuery, graphql } from 'gatsby'
+import {
+  container,
+  heading,
+  navLinks,
+  navLinkItem,
+  navLinkText
+} from './layout.module.css'
+import {StaticImage} from 'gatsby-plugin-image'
 const Layout=({pageTitle, children})=>{
+    const data = useStaticQuery(graphql`
+    query {
+      site {
+        siteMetadata {
+          title
+        }
+      }
+    }  
+  `)
     return (
         <main className={container}>
-            <title>{pageTitle}</title>
+            <title>{pageTitle} | {data.site.siteMetadata.title}</title>
+            <p>{data.site.siteMetadata.title}</p>
             <nav>
                 <ul>
                     <li className={navLinkItem}><Link to="/" className={navLinkText}>Home</Link></li>
