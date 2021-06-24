@@ -1,10 +1,9 @@
 import * as React from 'react'
-import {Layout} from '../pages/components/layout'
+import Layout from '../pages/components/layout'
 
 const BlogPage = () =>{
     return (
-        <Layout pageTitle="My Blog Post">
-            <p>My cool posts will go in here</p>
+        <Layout pageTitle="My Blog Page">
         </Layout>
     )
 }

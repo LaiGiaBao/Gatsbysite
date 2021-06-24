@@ -1,6 +1,5 @@
 import * as React from 'react'
 import Layout from '../pages/components/layout'
-import {StaticImage} from 'gatsby-plugin-image'
 
 const IndexPage =() =>{
   return (
