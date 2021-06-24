@@ -5,7 +5,9 @@ import {
   heading,
   navLinks,
   navLinkItem,
+  siteTitle,
   navLinkText
+  
 } from './layout.module.css'
 import {StaticImage} from 'gatsby-plugin-image'
 const Layout=({pageTitle, children})=>{
@@ -21,7 +23,7 @@ const Layout=({pageTitle, children})=>{
     return (
         <main className={container}>
             <title>{pageTitle} | {data.site.siteMetadata.title}</title>
-            <p>{data.site.siteMetadata.title}</p>
+            <p className={siteTitle}>{data.site.siteMetadata.title}</p>
             <nav>
                 <ul>
                     <li className={navLinkItem}><Link to="/" className={navLinkText}>Home</Link></li>
